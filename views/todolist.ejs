@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <meta name="description" content="">
+    <meta name="author" content="rui">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Custom styles for this template -->
+    <link href="css/todolist.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="heading">
+        <h1><%= dayDisplay %></h1>
+    </div>
+    
+
+    <div class="box">
+        <ul>
+            <%for(item of items){%>
+                <div class="item">
+                    <input type="checkbox" value="<%=item._id%>" class="delete">
+                    <p> <%=item.content%></p>
+                </div>
+
+                <%}%>
+
+        </ul>
+
+        <form class='item' action="/plan" method="post">
+            <input type="text" name="newItem" placeholder="New Plan" autocomplete="off">
+            <button type="submit" name="button_date" id="button_date">+</button>
+        </form>
+
+
+    </div>
+
+
+
+
+<script src="jsp/deleteItem.js" charset="utf-8" type="module"></script>
+</body>
+
+</html>
